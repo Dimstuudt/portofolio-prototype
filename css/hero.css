@@ -1,0 +1,441 @@
+/* ============================================
+    HERO SECTION - Purple White Theme
+    Background: Putih | Accents: Ungu
+    MENGGUNAKAN ELEMEN DARI CONTACT SECTION
+============================================ */
+
+.hero {
+    position: relative;
+    /* Penting untuk penempatan elemen latar belakang */
+    min-height: 100vh;
+    padding: 8rem 5% 4rem;
+    background: #ffffff;
+    /* Latar belakang Putih, mengikuti tema Contact */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    flex-wrap: wrap;
+    overflow: hidden;
+    /* Mencegah overflow dari shape */
+    z-index: 1;
+    /* Pastikan konten di atas shapes */
+}
+
+/* ----------------------------------
+    Background Animated Shapes (Dicomot dari Contact)
+    Tambahkan DIV ini di HTML jika belum ada, atau setidaknya di section hero:
+    <div class="bg-shapes">...</div>
+------------------------------------- */
+.hero .bg-shapes {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.hero .shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.08;
+}
+
+/* Menggunakan gradient ungu yang sama */
+.hero .shape-1 {
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    top: -15%;
+    right: -10%;
+    animation: float1 18s ease-in-out infinite;
+}
+
+.hero .shape-2 {
+    width: 350px;
+    height: 350px;
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    bottom: 5%;
+    left: -5%;
+    animation: float2 14s ease-in-out infinite;
+}
+
+/* Menggunakan Keyframes yang sudah ada dari Contact CSS */
+@keyframes float1 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(-50px, 50px) rotate(180deg);
+    }
+}
+
+@keyframes float2 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(40px, -40px) rotate(-180deg);
+    }
+}
+
+/* ----------------------------------
+    Hero Text Styling (Disesuaikan)
+------------------------------------- */
+
+.hero-text {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+    z-index: 2;
+    /* Di atas shapes */
+    animation: fadeInLeft 1s ease-out;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    /* Sedikit lebih besar */
+    color: #1a202c;
+    /* Warna teks gelap */
+    margin-bottom: 1rem;
+    font-weight: 800;
+    /* Tebal seperti contact-title */
+}
+
+/* Menggunakan gradient ungu yang sama seperti .gradient-text di Contact */
+.highlight {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* Menghapus animasi 'glow' lama, bisa diganti jika perlu */
+}
+
+.intro {
+    color: #718096;
+    /* Warna teks abu-abu yang lebih lembut */
+    font-size: 1.25rem;
+    /* Sedikit lebih besar */
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    max-width: 550px;
+}
+
+/* ----------------------------------
+    Social Buttons (Disesuaikan menjadi Stylish Buttons)
+------------------------------------- */
+.social-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding-top: 1rem;
+}
+
+.btn-social {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.8rem;
+    /* Mengganti gaya transparan lama dengan gaya terisi */
+    background: #ffffff;
+    border: 2px solid #e2e8f0;
+    color: #667eea;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.btn-social i {
+    color: #764ba2;
+}
+
+.btn-social:hover {
+    /* Gaya hover sama dengan social-icon di Contact */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: transparent;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.btn-social:hover i {
+    color: white;
+}
+
+/* ----------------------------------
+    Hero Photo (Disesuaikan)
+------------------------------------- */
+
+.hero-photo {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: flex-end;
+    /* Posisikan foto ke kanan */
+    position: relative;
+    z-index: 2;
+    animation: fadeInRight 1s ease-out;
+}
+
+.hero-photo img {
+    width: 380px;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 16px;
+    /* Mengikuti card radius di Contact */
+    border: 5px solid #e2e8f0;
+    /* Border abu-abu lembut */
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    /* Shadow lebih lembut */
+    animation: float 3s ease-in-out infinite;
+}
+
+/* ----------------------------------
+    Responsive Adjustments
+------------------------------------- */
+@media (max-width: 968px) {
+    .hero {
+        padding: 6rem 5% 3rem;
+        flex-direction: column-reverse;
+        /* Pindahkan foto ke atas */
+        text-align: center;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+
+    .social-buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .intro {
+        font-size: 1.1rem;
+    }
+
+    .hero-photo img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+}
+
+/* ----------------------------------
+    Tambahan Hiasan Visual (Diambil dari Contact)
+------------------------------------- */
+
+.hero-photo {
+    /* Pastikan posisi relatif agar elemen di dalamnya bisa absolut */
+    position: relative; 
+    /* ... (gaya hero-photo yang sudah ada) ... */
+    
+    /* Atur agar foto dan hiasan visual berada di posisi yang benar */
+    width: 400px; /* Lebar wadah visual */
+    height: 450px; /* Tinggi wadah visual */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-photo img {
+    /* Pastikan gambar berada di atas hiasan */
+    position: relative;
+    z-index: 5;
+    /* ... (gaya hero-photo img yang sudah ada) ... */
+}
+
+/* Wadah untuk dekorasi visual */
+.photo-decoration-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1; 
+}
+
+/* Lingkaran Berputar (Gaya diambil dari Contact Section) */
+.deco-circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid;
+    animation: rotate 15s linear infinite; /* Menggunakan keyframe rotate dari contact */
+}
+
+.deco-circle.circle-1 {
+    width: 100%;
+    height: 100%;
+    border-color: rgba(102, 126, 234, 0.2);
+    animation-duration: 25s;
+}
+
+.deco-circle.circle-2 {
+    width: 75%;
+    height: 75%;
+    top: 12.5%;
+    left: 12.5%;
+    border-color: rgba(118, 75, 162, 0.25);
+    animation-duration: 18s;
+    animation-direction: reverse;
+}
+
+/* Ikon Mengambang (Gaya dan animasi diambil dari Contact Section) */
+.float-icon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: white;
+    border: 3px solid #667eea;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #667eea;
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+    animation: floatIcon 3s ease-in-out infinite; /* Menggunakan keyframe floatIcon dari contact */
+    z-index: 10;
+}
+
+.float-icon i {
+    font-size: 1.2rem;
+}
+
+/* Posisi Ikon */
+.float-icon.icon-1 {
+    top: 0;
+    left: -5%;
+    animation-duration: 3.5s;
+}
+
+.float-icon.icon-2 {
+    top: 15%;
+    right: 0;
+    animation-duration: 4s;
+    animation-delay: 0.5s;
+}
+
+.float-icon.icon-3 {
+    bottom: 0;
+    left: 10%;
+    animation-duration: 3s;
+    animation-delay: 1s;
+}
+
+/* Keyframes Rotasi & Float (Pastikan Anda sudah menyertakan ini di file CSS Anda) */
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes floatIcon {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(8deg); }
+}
+
+/* Penyesuaian Responsif untuk Hiasan */
+@media (max-width: 968px) {
+    .hero-photo {
+        width: 350px;
+        height: 400px;
+    }
+
+    .float-icon {
+        width: 40px;
+        height: 40px;
+        border: 2px solid #667eea;
+    }
+}
+
+/* ============================================
+    DARK MODE: HERO SECTION
+============================================ */
+
+body.dark-theme .hero {
+    background: #1a202c;
+    /* Background section menjadi gelap */
+}
+
+/* 1. Background Animated Shapes */
+body.dark-theme .hero .shape {
+    opacity: 0.15;
+    /* Tingkatkan opacity shapes agar lebih terlihat di background gelap */
+}
+
+/* 2. Hero Text Styling */
+body.dark-theme .hero-text h1 {
+    color: #ffffff;
+    /* Judul utama menjadi putih */
+}
+
+body.dark-theme .intro {
+    color: #a0aec0;
+    /* Intro/subtitle menjadi abu-abu terang */
+}
+
+/* Highlight (gradient text) tidak perlu diubah */
+
+/* 3. Social Buttons */
+body.dark-theme .btn-social {
+    background: #2d3748;
+    /* Background button menjadi abu-abu gelap */
+    border: 2px solid #4a5568;
+    /* Border menjadi abu-abu gelap */
+    color: #9f7aea;
+    /* Warna teks kembali ke ungu muda */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .btn-social i {
+    color: #9f7aea;
+}
+
+/* Hover tetap sama (gradient dan warna putih) */
+body.dark-theme .btn-social:hover {
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* 4. Hero Photo */
+body.dark-theme .hero-photo img {
+    border: 5px solid #4a5568;
+    /* Border foto menjadi abu-abu gelap */
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    /* Shadow lebih gelap dan jelas */
+}
+
+/* 5. Photo Decoration (Lingkaran & Floating Icons) */
+
+/* Lingkaran Berputar */
+body.dark-theme .deco-circle.circle-1 {
+    border-color: rgba(102, 126, 234, 0.3);
+}
+
+body.dark-theme .deco-circle.circle-2 {
+    border-color: rgba(118, 75, 162, 0.4);
+}
+
+/* Ikon Mengambang */
+body.dark-theme .float-icon {
+    background: #2d3748;
+    /* Background ikon mengambang menjadi gelap */
+    border: 3px solid #9f7aea;
+    /* Border tetap ungu muda */
+    color: #9f7aea;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}

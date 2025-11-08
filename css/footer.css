@@ -1,0 +1,143 @@
+/* ============================================
+    FOOTER SECTION - TEMA TERANG (PUTIH & UNGU)
+============================================ */
+
+.footer {
+    background: #ffffff;
+    /* Ubah ke Putih Bersih */
+    color: #4a5568;
+    /* Warna teks gelap konsisten */
+    padding: 4rem 5% 1rem;
+    position: relative;
+    z-index: 10;
+}
+
+/* Pseudo-element untuk Garis Pembatas Gradien (TETAP) */
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    /* Ketebalan garis */
+    /* Gradien ungu konsisten sebagai pemisah visual */
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #667eea 100%);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid #e2e8f0;
+    /* Garis pemisah abu-abu terang */
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+/* --- Footer Left: Logo & Deskripsi --- */
+.footer-left {
+    max-width: 400px;
+}
+
+.footer-logo {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    /* Gradien ungu untuk logo */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.footer-desc {
+    font-size: 1rem;
+    color: #718096;
+    /* Warna teks abu-abu lembut */
+    line-height: 1.6;
+}
+
+/* --- Footer Right: Social Links --- */
+.footer-right h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    color: #1a202c;
+    /* Judul tetap gelap */
+}
+
+.footer-socials {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.footer-socials a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid #e2e8f0;
+    /* Border abu-abu terang */
+    color: #667eea;
+    /* Warna ikon ungu */
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+    /* Gaya hover ungu konsisten */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-color: transparent;
+    color: white;
+    /* Ikon menjadi putih saat hover */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* --- Footer Bottom: Copyright --- */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.footer-bottom p {
+    font-size: 0.9rem;
+    color: #718096;
+}
+
+.footer-bottom .highlight {
+    /* Gradien ungu untuk highlight copyright */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .footer-left,
+    .footer-right {
+        max-width: 100%;
+    }
+
+    .footer-socials {
+        justify-content: center;
+    }
+}

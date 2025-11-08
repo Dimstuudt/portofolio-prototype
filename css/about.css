@@ -1,0 +1,390 @@
+/* ============================================
+    ABOUT SECTION - Tata Letak 2 Kolom & Visual
+============================================ */
+
+.about {
+    position: relative;
+    padding: 6rem 5%;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+/* Title (Konsisten) */
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 4rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Container Utama (Grid 2 Kolom) */
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Memecah menjadi dua kolom */
+    gap: 5rem;
+    align-items: center;
+}
+
+/* --- Kolom Kiri: Teks --- */
+.about-text-content {
+    animation: fadeInLeft 1s ease-out;
+}
+
+.about-text-content p {
+    line-height: 1.8;
+    font-size: 1.15rem;
+    color: #4a5568;
+    margin-bottom: 1.8rem;
+}
+
+.about-intro-highlight {
+    font-size: 1.3rem;
+    /* Teks awal lebih besar */
+    color: #1a202c;
+    /* Teks lebih gelap agar menonjol */
+    font-weight: 500;
+}
+
+/* Button Call to Action (Gaya Konsisten) */
+.btn-primary-contact {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.8rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 1.5rem;
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary-contact:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(102, 126, 234, 0.5);
+}
+
+/* --- Kolom Kanan: Visual Summary --- */
+
+.about-visual-summary {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+    /* Atur tinggi */
+    animation: fadeInRight 1s ease-out;
+}
+
+/* Visual Ring Tengah */
+.skills-visual-ring {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border: 5px solid #e2e8f0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: rotate-slow 30s linear infinite;
+}
+
+.ring-center {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2.5rem;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+}
+
+.skill-ring-icon {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: #ffffff;
+    border: 3px solid #667eea;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #667eea;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.skill-ring-icon:hover {
+    transform: scale(1.1);
+    background: #667eea;
+    color: white;
+}
+
+/* Penempatan Ikon (Dengan Transform untuk Rotasi) */
+.icon-html {
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg) translate(0, -150px) rotate(0deg);
+}
+
+.icon-css {
+    top: 50%;
+    right: -10%;
+    transform: translateY(-50%) rotate(90deg) translate(0, -150px) rotate(-90deg);
+}
+
+.icon-js {
+    bottom: -10%;
+    left: 50%;
+    transform: translateX(-50%) rotate(180deg) translate(0, -150px) rotate(-180deg);
+}
+
+.icon-uiux {
+    top: 50%;
+    left: -10%;
+    transform: translateY(-50%) rotate(270deg) translate(0, -150px) rotate(-270deg);
+}
+
+/* Keyframes untuk Rotasi */
+@keyframes rotate-slow {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Stat Box (Elemen Pendukung) */
+.stat-box {
+    position: absolute;
+    bottom: 50px;
+    right: 0;
+    width: 150px;
+    padding: 1rem;
+    background: #f7fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    text-align: center;
+    z-index: 10;
+}
+
+.stat-box h4 {
+    font-size: 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+.stat-box p {
+    font-size: 0.9rem;
+    color: #718096;
+}
+
+/* --- Optional: Extended Skill Grid --- */
+.skills-grid-extended {
+    max-width: 1200px;
+    margin: 4rem auto 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding-top: 3rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.skill-card-extended {
+    background: #ffffff;
+    border: 2px solid #e2e8f0;
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.skill-card-extended:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+    border-color: #667eea;
+}
+
+.skill-card-extended i {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.skill-card-extended h4 {
+    font-size: 1.2rem;
+    color: #1a202c;
+    font-weight: 700;
+}
+
+.skill-card-extended p {
+    font-size: 0.95rem;
+    color: #718096;
+    margin-top: 0.3rem;
+    line-height: 1.4;
+}
+
+
+/* --- Responsive --- */
+@media (max-width: 968px) {
+    .about-container {
+        grid-template-columns: 1fr;
+        /* Kembali ke 1 kolom */
+        gap: 3rem;
+    }
+
+    .about-visual-summary {
+        order: -1;
+        /* Pindahkan visual ke atas */
+        height: 350px;
+    }
+
+    .skills-visual-ring {
+        width: 280px;
+        height: 280px;
+    }
+
+    .about-text-content {
+        text-align: center;
+    }
+
+    .stat-box {
+        right: 50%;
+        transform: translateX(50%);
+        bottom: 0;
+    }
+}
+
+@media (max-width: 550px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .skills-visual-ring {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/* ============================================
+    DARK MODE: ABOUT SECTION
+============================================ */
+
+body.dark-theme .about {
+    /* Background Section Gelap */
+    background: #1a202c;
+}
+
+/* 1. Konten Teks */
+body.dark-theme .about-text-content p {
+    color: #a0aec0;
+    /* Teks paragraf menjadi abu-abu terang */
+}
+
+body.dark-theme .about-intro-highlight {
+    color: #ffffff;
+    /* Teks highlight menjadi putih */
+}
+
+/* Button CTA tidak perlu diubah, karena sudah menggunakan gradient */
+
+/* 2. Visual Summary (Ring dan Ikon) */
+body.dark-theme .skills-visual-ring {
+    border-color: #4a5568;
+    /* Border ring menjadi abu-abu gelap */
+    /* Rotasi tetap sama */
+}
+
+body.dark-theme .ring-center {
+    /* Background tetap gradient */
+    /* Warna ikon tetap putih */
+}
+
+body.dark-theme .skill-ring-icon {
+    background: #2d3748;
+    /* Background ikon menjadi gelap */
+    border-color: #667eea;
+    /* Border tetap ungu */
+    color: #9f7aea;
+    /* Ikon tetap ungu */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    /* Shadow lebih gelap */
+}
+
+body.dark-theme .skill-ring-icon:hover {
+    /* Hover tetap sama (putih saat hover) */
+    background: #667eea;
+    color: white;
+}
+
+/* 3. Stat Box (2+ Tahun Pengalaman) */
+body.dark-theme .stat-box {
+    background: #2d3748;
+    /* Background box menjadi abu-abu gelap */
+    border-color: #4a5568;
+    /* Border box menjadi abu-abu gelap */
+}
+
+body.dark-theme .stat-box h4 {
+    /* H4 tetap menggunakan gradient */
+}
+
+body.dark-theme .stat-box p {
+    color: #a0aec0;
+    /* Teks deskripsi stat box menjadi terang */
+}
+
+/* 4. Extended Skill Grid */
+body.dark-theme .skills-grid-extended {
+    border-top-color: #4a5568;
+    /* Garis pemisah menjadi abu-abu gelap */
+}
+
+body.dark-theme .skill-card-extended {
+    background: #2d3748;
+    /* Background kartu menjadi abu-abu gelap */
+    border: 2px solid #4a5568;
+    /* Border kartu menjadi abu-abu gelap */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    /* Tambahkan shadow gelap */
+}
+
+body.dark-theme .skill-card-extended:hover {
+    background: #384252;
+    /* Sedikit lebih terang saat hover */
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+    border-color: #667eea;
+}
+
+body.dark-theme .skill-card-extended i {
+    /* Ikon tetap menggunakan gradient */
+}
+
+body.dark-theme .skill-card-extended h4 {
+    color: #ffffff;
+    /* Judul kartu menjadi putih */
+}
+
+body.dark-theme .skill-card-extended p {
+    color: #a0aec0;
+    /* Deskripsi kartu menjadi abu-abu terang */
+}

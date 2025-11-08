@@ -1,0 +1,374 @@
+/* ============================================
+    PROJECTS SECTION - FINAL DRAFT (3 CARD)
+============================================ */
+
+.projects {
+    padding: 6rem 5%;
+    background: #f7fafc;
+    position: relative;
+}
+
+/* Title (Konsisten) */
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 4rem;
+    /* Menggunakan gradien ungu konsisten */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Project Grid - Otomatis 3 Kolom */
+.project-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    /* Memastikan 3 kolom, dan responsif ke 1 atau 2 jika layar kecil */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Project Card */
+.project-card {
+    background: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.25);
+    border-color: #667eea;
+}
+
+/* Gambar & Overlay untuk Link */
+.project-img-wrapper {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-img-wrapper img {
+    transform: scale(1.05);
+}
+
+/* Overlay Link saat Hover */
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(102, 126, 234, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+/* Tombol "Lihat Proyek" */
+.view-details-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: white;
+    color: #667eea;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.3s ease;
+    border: 2px solid white;
+}
+
+.view-details-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Info Proyek */
+.project-info {
+    padding: 1.5rem;
+}
+
+.project-info h3 {
+    font-size: 1.5rem;
+    color: #1a202c;
+    margin-bottom: 0.5rem;
+}
+
+.project-info p {
+    font-size: 1rem;
+    color: #718096;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+/* Badge Teknologi */
+.tech-badges {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.badge {
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 5px;
+    background: #e9e8f8;
+    color: #667eea;
+}
+
+/* --- Responsive --- */
+@media (max-width: 968px) {
+    .project-grid {
+        /* Kembali ke 2 kolom di tablet */
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    .project-grid {
+        /* 1 kolom di HP */
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Deskripsi Seksi Proyek */
+/* Styling untuk Deskripsi Pengantar Baru */
+.section-description {
+    max-width: 800px;
+    /* Batasi lebar agar tidak terlalu panjang */
+    margin: 0 auto 3rem;
+    /* Tengah dan beri jarak bawah */
+    text-align: center;
+}
+
+.section-description p {
+    font-size: 1.15rem;
+    color: #4a5568;
+    /* Warna teks abu-abu konsisten */
+    line-height: 1.7;
+    font-weight: 500;
+}
+
+/* ============================================
+    PROJECTS SECTION - DENGAN ANIMASI LATAR BELAKANG
+============================================ */
+
+.projects {
+    padding: 6rem 5%;
+    background: #ffffff;
+    /* Ubah ke Putih Bersih */
+    position: relative;
+    overflow: hidden;
+    /* Penting untuk mengontrol posisi shape */
+}
+
+/* ----------------------------------
+    Background Shapes (Diambil dari Hero/Contact)
+------------------------------------- */
+.projects .bg-shapes {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.projects .shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.08;
+    /* Tetap transparan */
+}
+
+/* Shape Besar Ungu (Baru: Shape 3) */
+.projects .shape-3 {
+    width: 600px;
+    height: 600px;
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    bottom: -100px;
+    /* Posisikan di pojok kiri/kanan bawah */
+    left: -150px;
+    opacity: 0.05;
+    /* Lebih transparan */
+    animation: float2 20s ease-in-out infinite;
+    /* Menggunakan animasi float yang sudah ada */
+}
+
+
+/* Ikon Besar Transparan Bergerak */
+.float-icon-bg {
+    position: absolute;
+    font-size: 8rem;
+    /* Ukuran Ikon Besar */
+    color: #667eea;
+    opacity: 0.05;
+    /* Sangat transparan */
+    transition: all 0.5s ease;
+    pointer-events: none;
+    /* Pastikan tidak menghalangi interaksi */
+    z-index: 1;
+}
+
+.float-icon-bg.icon-bg-1 {
+    top: 5%;
+    right: 5%;
+    transform: rotate(15deg);
+    animation: floatIcon 6s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+.float-icon-bg.icon-bg-2 {
+    bottom: 10%;
+    right: 20%;
+    transform: rotate(-25deg);
+    animation: floatIcon 7s ease-in-out infinite reverse;
+}
+
+/* --- Pastikan keyframes ini ada di CSS utama Anda --- */
+/*
+@keyframes floatIcon {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(8deg); }
+}
+
+@keyframes float2 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(40px, -40px) rotate(-180deg); }
+}
+*/
+
+/* ----------------------------------
+    Proyek Grid (Pastikan Z-Index > 0)
+------------------------------------- */
+.project-grid {
+    position: relative;
+    z-index: 5;
+    /* Pastikan kartu di atas elemen latar belakang */
+    /* ... (gaya project-grid lainnya tetap sama) ... */
+}
+
+.section-description {
+    position: relative;
+    z-index: 5;
+    /* ... (gaya section-description lainnya tetap sama) ... */
+}
+
+/* Kartu Proyek agar tetap di atas */
+.project-card {
+    position: relative;
+    z-index: 5;
+    /* ... (gaya project-card lainnya tetap sama) ... */
+}
+
+/* Judul agar tetap di atas */
+.section-title {
+    position: relative;
+    z-index: 5;
+    /* ... (gaya section-title lainnya tetap sama) ... */
+}
+
+/* ============================================
+    DARK MODE: PROJECTS SECTION
+============================================ */
+
+body.dark-theme .projects {
+    background: #1a202c;
+    /* Background section menjadi gelap */
+}
+
+/* 1. Background Shapes & Text */
+
+body.dark-theme .section-description p {
+    color: #a0aec0;
+    /* Deskripsi pengantar menjadi abu-abu terang */
+}
+
+body.dark-theme .projects .shape {
+    opacity: 0.15;
+    /* Tingkatkan opacity shapes */
+}
+
+body.dark-theme .projects .shape-3 {
+    opacity: 0.1;
+    /* Shape besar tetap agak transparan */
+}
+
+body.dark-theme .float-icon-bg {
+    color: #9f7aea;
+    /* Warna ikon latar belakang menjadi ungu muda */
+    opacity: 0.08;
+    /* Sedikit lebih jelas di background gelap */
+}
+
+
+/* 2. Project Card */
+
+body.dark-theme .project-card {
+    background: #2d3748;
+    /* Background kartu menjadi abu-abu gelap */
+    border: 2px solid #4a5568;
+    /* Border kartu menjadi abu-abu gelap */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-theme .project-card:hover {
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+    border-color: #667eea;
+}
+
+/* Info Proyek */
+body.dark-theme .project-info h3 {
+    color: #ffffff;
+    /* Judul proyek menjadi putih */
+}
+
+body.dark-theme .project-info p {
+    color: #a0aec0;
+    /* Deskripsi proyek menjadi abu-abu terang */
+}
+
+/* 3. Overlay dan Tombol */
+
+/* Overlay Link saat Hover (Warna tetap, tapi opacity bisa disesuaikan) */
+body.dark-theme .project-overlay {
+    background: rgba(102, 126, 234, 0.9);
+    /* Sedikit lebih solid untuk kontras */
+}
+
+/* Tombol "Lihat Proyek" */
+body.dark-theme .view-details-btn {
+    background: #1a202c;
+    /* Background tombol menjadi gelap */
+    color: #667eea;
+    /* Teks tetap ungu */
+    border: 2px solid #1a202c;
+}
+
+body.dark-theme .view-details-btn:hover {
+    /* Hover tetap sama (transform scale) */
+}
+
+/* 4. Badge Teknologi */
+body.dark-theme .badge {
+    background: #4a5568;
+    /* Background badge menjadi abu-abu gelap */
+    color: #b794f4;
+    /* Warna teks badge menjadi ungu yang lebih cerah */
+}
