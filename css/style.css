@@ -192,3 +192,94 @@ body.dark-theme h3,
 body.dark-theme h4 {
     color: #ffffff;
 }
+
+/* ============================================
+    NAVBAR MOBILE (max-width: 768px)
+============================================ */
+
+/* 1. Aturan Dasar Navbar Mobile (Menghilangkan gap/kolom yang tidak perlu) */
+@media (max-width: 768px) {
+
+    /* Navbar utama harus tetap horizontal untuk Logo, Toggle, dan Theme */
+    .navbar {
+        flex-direction: row;
+        /* Kembali ke tata letak horizontal */
+        padding: 1rem 5%;
+        /* Kita butuh space-between untuk memisahkan Logo dan Toggles */
+        justify-content: space-between;
+    }
+
+    /* 2. Tombol Hamburger (Asumsikan Anda menambahkan tombol ini di HTML) */
+    .menu-toggle {
+        display: block;
+        /* Tampilkan tombol hamburger di mobile */
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.4rem;
+        color: #4a5568;
+        transition: color 0.3s ease;
+        order: 3;
+        /* Pastikan Theme Toggle ada di sampingnya */
+    }
+
+    /* 3. Penyesuaian Logo dan Theme Toggle */
+    .navbar .logo {
+        order: 1;
+        /* Posisikan logo di kiri */
+        margin: 0;
+    }
+
+    .theme-toggle {
+        order: 4;
+        /* Posisikan theme toggle di paling kanan */
+        margin-left: 1rem;
+    }
+
+    /* 4. Nav Links (Menu Navigasi) - DISINGKIRKAN SAAT DEFAULT MOBILE */
+    .nav-links {
+        /* Secara default, sembunyikan nav-links di luar layar */
+        position: fixed;
+        top: 0;
+        right: -100%;
+        /* Sembunyikan di luar layar */
+        width: 65%;
+        /* Lebar menu saat dibuka */
+        height: 100vh;
+        flex-direction: column;
+        /* Tautan ke bawah (vertikal) */
+        background: #f7fafc;
+        /* Background menu pop-out */
+        padding: 6rem 2rem 2rem;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        transition: right 0.4s ease-in-out;
+        z-index: 999;
+    }
+
+    /* Tautan navigasi saat menu terbuka (Aktifkan class ini dengan JavaScript) */
+    .nav-links.active {
+        right: 0;
+        /* Tampilkan menu */
+    }
+
+    .nav-links li {
+        margin-bottom: 1.5rem;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+        color: #1a202c;
+        /* Teks gelap di menu pop-out terang */
+    }
+
+    /* Nav Links Dark Mode Override */
+    body.dark-theme .nav-links {
+        background-color: #2d3748;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.4);
+    }
+
+    body.dark-theme .nav-links a {
+        color: #e2e8f0;
+        /* Teks terang di menu pop-out gelap */
+    }
+}
