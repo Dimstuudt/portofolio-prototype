@@ -1,0 +1,957 @@
+/* ============================================
+   INFORMATION PAGE - Purple White Theme
+============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 2rem 5%;
+}
+
+/* Back Button */
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.back-btn:hover {
+    background: white;
+    color: #667eea;
+    transform: translateX(-5px);
+}
+
+/* Container */
+.info-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.info-content {
+    background: white;
+    border-radius: 30px;
+    padding: 3rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header */
+.info-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 3px solid #f7fafc;
+}
+
+.header-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.header-icon i {
+    width: 40px;
+    height: 40px;
+}
+
+.info-header h1 {
+    font-size: 2.5rem;
+    color: #1a202c;
+    margin-bottom: 1rem;
+}
+
+.header-subtitle {
+    font-size: 1.1rem;
+    color: #718096;
+    line-height: 1.7;
+}
+
+/* Info Cards Grid */
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.info-card {
+    padding: 2rem 1.5rem;
+    background: #f7fafc;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+}
+
+.info-card .card-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.info-card h3 {
+    font-size: 1.1rem;
+    color: #1a202c;
+    margin-bottom: 0.5rem;
+}
+
+.info-card p {
+    font-size: 0.9rem;
+    color: #718096;
+    line-height: 1.6;
+}
+
+/* Section Styles */
+.admin-section,
+.community-section,
+.social-section,
+.tips-section {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: #f7fafc;
+    border-radius: 20px;
+}
+
+.admin-section h2,
+.community-section h2,
+.social-section h2,
+.tips-section h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.8rem;
+    color: #1a202c;
+    margin-bottom: 0.8rem;
+}
+
+.section-desc {
+    color: #718096;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Admin Cards */
+.admin-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.admin-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem 2rem;
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.admin-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    transition: all 0.3s ease;
+}
+
+.admin-card.whatsapp::before {
+    background: #25D366;
+}
+
+.admin-card.telegram::before {
+    background: #0088cc;
+}
+
+.admin-card.email::before {
+    background: #EA4335;
+}
+
+.admin-card:hover {
+    transform: translateX(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.admin-card:hover::before {
+    width: 8px;
+}
+
+.admin-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+}
+
+.whatsapp .admin-icon {
+    background: #25D366;
+}
+
+.telegram .admin-icon {
+    background: #0088cc;
+}
+
+.email .admin-icon {
+    background: #EA4335;
+}
+
+.admin-info {
+    flex: 1;
+}
+
+.admin-info h3 {
+    font-size: 1.2rem;
+    color: #1a202c;
+    margin-bottom: 0.3rem;
+}
+
+.admin-number {
+    color: #667eea;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.admin-badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    background: rgba(102, 126, 234, 0.1);
+    color: #667eea;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.admin-arrow {
+    color: #cbd5e0;
+    transition: all 0.3s ease;
+}
+
+.admin-card:hover .admin-arrow {
+    color: #667eea;
+    transform: translateX(5px);
+}
+
+/* Group Cards */
+.group-list {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.group-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    border: 2px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.group-card:hover {
+    border-color: #667eea;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
+}
+
+.group-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.group-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.whatsapp-bg {
+    background: #25D366;
+}
+
+.telegram-bg {
+    background: #0088cc;
+}
+
+.discord-bg {
+    background: #5865F2;
+}
+
+.group-title h3 {
+    font-size: 1.3rem;
+    color: #1a202c;
+    margin-bottom: 0.3rem;
+}
+
+.member-count {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #718096;
+    font-size: 0.9rem;
+}
+
+.group-desc {
+    color: #718096;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.group-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.9rem 1.8rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.group-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+/* Social Grid */
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.social-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem 1rem;
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.social-card i {
+    width: 40px;
+    height: 40px;
+}
+
+.social-card span {
+    font-weight: 700;
+    color: #1a202c;
+}
+
+.social-card small {
+    font-size: 0.85rem;
+    color: #718096;
+}
+
+/* Specific Social Colors */
+.instagram:hover {
+    border-color: #E1306C;
+}
+
+.instagram:hover i {
+    color: #E1306C;
+}
+
+.twitter:hover {
+    border-color: #1DA1F2;
+}
+
+.twitter:hover i {
+    color: #1DA1F2;
+}
+
+.linkedin:hover {
+    border-color: #0A66C2;
+}
+
+.linkedin:hover i {
+    color: #0A66C2;
+}
+
+.youtube:hover {
+    border-color: #FF0000;
+}
+
+.youtube:hover i {
+    color: #FF0000;
+}
+
+.github:hover {
+    border-color: #333;
+}
+
+.github:hover i {
+    color: #333;
+}
+
+.tiktok:hover {
+    border-color: #000;
+}
+
+.tiktok:hover i {
+    color: #000;
+}
+
+/* Tips Grid */
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.tip-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.tip-card:hover {
+    border-color: #667eea;
+    transform: translateY(-5px);
+}
+
+.tip-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.tip-card h4 {
+    color: #1a202c;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.tip-card p {
+    color: #718096;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.contact-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-option {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem 2rem;
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-option:hover {
+    border-color: #667eea;
+    transform: translateX(10px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
+}
+
+.contact-option .option-icon {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.whatsapp .option-icon {
+    background: #25D366;
+}
+
+.email .option-icon {
+    background: #EA4335;
+}
+
+.linkedin .option-icon {
+    background: #0A66C2;
+}
+
+.option-content {
+    flex: 1;
+}
+
+.option-content h4 {
+    font-size: 1.1rem;
+    color: #1a202c;
+    margin-bottom: 0.3rem;
+}
+
+.option-content p {
+    font-size: 0.9rem;
+    color: #718096;
+}
+
+.option-arrow {
+    color: #cbd5e0;
+    transition: all 0.3s ease;
+}
+
+.contact-option:hover .option-arrow {
+    color: #667eea;
+    transform: translateX(5px);
+}
+
+/* FAQ Section */
+.faq-section {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: #f7fafc;
+    border-radius: 20px;
+}
+
+.faq-section h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #1a202c;
+    margin-bottom: 2rem;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.faq-item {
+    padding: 1.5rem;
+    background: white;
+    border-radius: 15px;
+    border-left: 4px solid #667eea;
+}
+
+.faq-question {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+.faq-question i {
+    color: #667eea;
+    flex-shrink: 0;
+}
+
+.faq-question h4 {
+    font-size: 1.05rem;
+    color: #1a202c;
+}
+
+.faq-answer {
+    color: #718096;
+    line-height: 1.7;
+    padding-left: 2.5rem;
+}
+
+/* CTA Section */
+.cta-section {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    border-radius: 20px;
+    margin-top: 3rem;
+}
+
+.cta-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.cta-section h3 {
+    font-size: 1.8rem;
+    color: #1a202c;
+    margin-bottom: 0.8rem;
+}
+
+.cta-section p {
+    font-size: 1.05rem;
+    color: #718096;
+    margin-bottom: 2rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: white;
+    color: #667eea;
+    border: 2px solid #667eea;
+}
+
+.btn-secondary:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem 4%;
+    }
+
+    .info-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .info-header h1 {
+        font-size: 2rem;
+    }
+
+    .header-subtitle {
+        font-size: 1rem;
+    }
+
+    .info-cards {
+        grid-template-columns: 1fr;
+    }
+
+    /* Admin Section */
+    .admin-section,
+    .community-section,
+    .social-section,
+    .tips-section {
+        padding: 1.5rem;
+    }
+
+    .admin-section h2,
+    .community-section h2,
+    .social-section h2,
+    .tips-section h2 {
+        font-size: 1.5rem;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .admin-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .admin-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .admin-info h3 {
+        font-size: 1.1rem;
+    }
+
+    .admin-number {
+        font-size: 0.9rem;
+    }
+
+    .admin-arrow {
+        display: none;
+    }
+
+    /* Group Cards */
+    .group-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .group-title h3 {
+        font-size: 1.2rem;
+    }
+
+    .group-desc {
+        font-size: 0.9rem;
+    }
+
+    .group-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Social Grid */
+    .social-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Tips Grid */
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* CTA Section */
+    .cta-section {
+        padding: 2rem 1.5rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 0.5rem 3%;
+    }
+
+    .back-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .info-content {
+        padding: 1.5rem 1rem;
+        border-radius: 20px;
+    }
+
+    .info-header h1 {
+        font-size: 1.7rem;
+    }
+
+    .header-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .header-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* Admin Cards */
+    .admin-section h2,
+    .community-section h2,
+    .social-section h2,
+    .tips-section h2 {
+        font-size: 1.3rem;
+    }
+
+    .admin-card {
+        padding: 1.2rem;
+    }
+
+    .admin-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .admin-info h3 {
+        font-size: 1rem;
+    }
+
+    .admin-number {
+        font-size: 0.85rem;
+    }
+
+    .admin-badge {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.6rem;
+    }
+
+    /* Group Cards */
+    .group-card {
+        padding: 1.5rem;
+    }
+
+    .group-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .group-title h3 {
+        font-size: 1.1rem;
+    }
+
+    .member-count {
+        font-size: 0.85rem;
+    }
+
+    .group-desc {
+        font-size: 0.85rem;
+    }
+
+    .group-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    /* Social Grid */
+    .social-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+
+    .social-card {
+        padding: 1.2rem 0.8rem;
+    }
+
+    .social-card i {
+        width: 32px;
+        height: 32px;
+    }
+
+    .social-card span {
+        font-size: 0.9rem;
+    }
+
+    .social-card small {
+        font-size: 0.75rem;
+    }
+
+    /* Tips Grid */
+    .tip-card {
+        padding: 1.2rem;
+    }
+
+    .tip-icon {
+        font-size: 2rem;
+    }
+
+    .tip-card h4 {
+        font-size: 1rem;
+    }
+
+    .tip-card p {
+        font-size: 0.85rem;
+    }
+
+    /* CTA Section */
+    .cta-icon {
+        font-size: 2.5rem;
+    }
+
+    .cta-section h3 {
+        font-size: 1.5rem;
+    }
+
+    .cta-section p {
+        font-size: 0.95rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 0.9rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
